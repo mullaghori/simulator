@@ -1,0 +1,108 @@
+
+<!--------------------------------------
+
+SIMULATION PAGE OF MY SIMULATOR - WEB-BASED SIMULATOR FOR SORTING ALGORITHMS
+BY
+JAVED ULLAH - BC210405541
+
+USER CAN...
+* Experience live simulation
+* Can Pause/ Resume the simulation
+* Adjust the speed of the simulation
+* Can reset the simulation
+* all the data shown there will be stored in database for future comparisons
+
+THINGS TO DO...
+* Will try to add a table of different algorihms and their usage count
+* Learn and include D3.js
+
+---------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+
+        <!-- Different types of meta data about this Simulator -->
+        <meta charset="UTF-8" />  <!-- Encoding character set -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!-- By default Device width and initial zoom level -->
+        <meta name="author" content="Javed Ullah MGI" />  <!-- Author's Info - the coder of this website -->
+
+        <meta name="keywords" content="sorting simulator, algorithm visualization, sorting algorithms, animated sorting, array sorting, bubble sort, quick sort, sorting visualizer, counting sort, tim sort, shell sort, heap sort, insertion sort, merge sort, radix sort, selection sort, bucket sort" />  <!-- Helps in SEO, some related kewords and tags etc included -->
+        <meta name="description" content="A web-based animated simulator for sorting algorithms that provides a visualized experience of sorting processes using different algorithms." />  <!-- Helps in SEO, A short description included -->
+
+        <meta name="robots" content="index, follow" />  <!-- Helps with SEO -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- Ensures compatibility with older IE versions -->
+        
+        <!-- Favicons for different screens and different devices -->
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+        <link rel="icon" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512" />
+        <link rel="icon" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+        <link rel="manifest" href="../images/site.webmanifest" />
+        
+        <!-- Website Title and Page title of my Web Based Simulator -->
+        <title>Web-Based Animated Simulator for Sorting Algorithms - Simulation</title>
+        
+        <!-- Linking Bootstrap CSS via CDN Link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        
+        <!-- Linking Bootstrap JavaScript (with Popper.js) via CDN Link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Linking Bootstrap Icons via CDN Link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+        <!-- Ensuring that updated jquery should be used -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+
+        <!-- Container for header -->
+        <header id="header"></header>
+        <main class="flex-grow-1 bg-light d-flex justify-content-center align-items-center min-vh-100">
+            <section class="bg-white p-4 rounded shadow-lg w-75">
+
+                <h2 class="fw-bold text-primary text-center">Simulation</h2>
+                <h3 class="text-dark">Selected Array: </h3><span id="selected-array" class="fw-normal text-secondary"></span>
+                    <h3 class="text-dark mt-3">Selected Algorithm: </h3><span id="selected-algorithm" class="fw-normal text-secondary"></span>
+
+                <fieldset class="border border-primary p-4 rounded-3 shadow-sm">
+                    
+                    <div id="array-container" class="d-flex justify-content-center align-items-end gap-1 vh-80"></div>
+                    
+                    <label for="speed-range" class="form-label mt-3">Speed:</label>
+                    <input type="range" id="speed-range" class="form-range" min="1" max="10" step="1">
+                    <div class="mt-3 d-flex justify-content-between">
+                        <button class="btn btn-success">Start</button>
+                        <button class="btn btn-warning">Pause</button>
+                        <button type="reset" class="btn btn-danger w-30">Reset</button>                    
+                    </div>
+
+                </fieldset>
+
+                <div class="mt-4 p-3 border border-secondary rounded-3 bg-light">
+                    <h5 class="text-primary">Sorting Details</h5>
+                    <p><strong>Entered Array:</strong> <span id="entered-array" class="text-secondary"></span></p>
+                    <p><strong>Sorted Array:</strong> <span id="sorted-array" class="text-success"></span></p>
+                    <p><strong>Used Algorithm:</strong> <span id="used-algorithm" class="text-secondary"></span></p>
+                    <p><strong>Start Time:</strong> <span id="start-time" class="text-secondary"></span></p>
+                    <p><strong>End Time:</strong> <span id="end-time" class="text-secondary"></span></p>
+                    <p><strong>Time Taken:</strong> <span id="time-taken" class="text-danger"></span></p>
+                    <p><strong>Usage Count (for algorithm):</strong> <span id="usage-count" class="text-primary"></span></p> <!-- Not workable so far -->
+                </div>
+
+            </section>
+        </main>
+        
+        <!-- Conatiner for footer -->
+        <footer id="footer"></footer>
+
+        <script src="https://d3js.org/d3.v7.min.js"></script> <!-- Linking D3.js via CDN Link / So for not being used here -->
+        <script src="../js/script.js"></script> <!-- Linking local script.js file -->
+        <script src="../js/simulation.js"></script> <!-- Linking local simulation.js file -->
+    </body>
+</html>

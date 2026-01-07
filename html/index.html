@@ -1,0 +1,290 @@
+
+<!--------------------------------------
+
+DASHBOARD PAGE OF MY SIMULATOR - WEB-BASED SIMULATOR FOR SORTING ALGORITHMS
+BY
+JAVED ULLAH - BC210405541
+
+USER CAN...
+* Navigate dashboard
+* Enter Array to sort
+* Read short description of sorting algorithm categories
+* Read short description of sorting algorithms
+* Navigate between different pages (Home, Docs, About, Feedback, Logs)
+
+THINGS TO DO...
+* Add some hovering effects for the nav links
+* Probably style the algorithm and categories section a bit more
+* Will add links to the headings of the algrotihms, to lead them to their pages
+
+---------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <!-- Different types of meta data about this Simulator -->
+    <meta charset="UTF-8" />  <!-- Encoding character set -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!-- By default Device width and initial zoom level -->
+    <meta name="author" content="Javed Ullah MGI" />  <!-- Author's Info - the coder of this website -->
+
+    <meta name="keywords" content="sorting simulator, algorithm visualization, sorting algorithms, animated sorting, array sorting, bubble sort, quick sort, sorting visualizer, counting sort, tim sort, shell sort, heap sort, insertion sort, merge sort, radix sort, selection sort, bucket sort" />  <!-- Helps in SEO, some related kewords and tags etc included -->
+    <meta name="description" content="A web-based animated simulator for sorting algorithms that provides a visualized experience of sorting processes using different algorithms." />  <!-- Helps in SEO, A short description included -->
+
+    <meta name="robots" content="index, follow" />  <!-- Helps with SEO -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- Ensures compatibility with older IE versions -->
+
+    <!-- Favicons for different screens and different devices -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="icon" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512" />
+    <link rel="icon" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/site.webmanifest" />
+
+    <!-- Website Title and Page title of my Web Based Simulator -->
+    <title>Web-Based Animated Simulator for Sorting Algorithms - Home</title>
+
+    <!-- Linking Bootstrap CSS via CDN Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <!-- Linking Bootstrap JavaScript (with Popper.js) via CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Linking Bootstrap Icons via CDN Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+    <!-- Linking External StyleSheet for some custom styling -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- container for header -->
+    <header id="header"></header>
+
+    <main class="flex-grow-1 bg-light">
+        <fieldset class="container mx-auto bg-white shadow-sm m-3 p-4 border border-primary rounded-3">
+            <legend class="fw-bold d-flex align-items-center justify-content-center">
+                Enter array to Sort
+                <i class="ms-2 text-primary bi bi-info-circle" role="button" title="Enter numbers separated by commas..."></i> <!-- BootStrap Icon -->
+            </legend>
+
+            <textarea class="form-control" name="" id="arrayInput" cols="30" rows="5" placeholder="Enter numbers separated by commas... (e.g. 4, 8, 30, 27, 7, 11, 1)"></textarea>
+            
+            <div class="mt-3 d-flex justify-content-between">
+                <button type="reset" class="btn btn-danger w-30 fw-bold">Reset</button>
+                <button type="submit" id="selectAlgorithmBtn" class="btn btn-primary w-30 fw-bold">Select Algorithm</button>
+                <button type="button" id="generateRandomBtn" class="btn btn-info w-30 fw-bold text-dark">Generate Random</button>
+            </div>
+        </fieldset>
+
+        <!-- Separator -->
+        <hr class="my-4 border-3 border-primary opacity-75" />
+
+        <section class="bg-info-subtle py-5">
+            <div class="container">
+                <!-- Categories Section -->
+                <div class="mb-5">
+
+                    <!-- This section will contain description of some basic categories -->
+                    <h2 class="text-center text-primary fw-bold mb-4">Different Categories</h2>
+                    <div class="row row-cols-1 row-cols-md-2 justify-content-center g-5">
+
+                        <!-- Comparison Based Sorting Algorithms -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/comparison-based-sorting-algorithms.jpg" alt="Bubble Sort" class="card-img-top custom-img" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Comparison-Based Sorting</h3>
+                                    <p class="card-text text-muted">Sorting algorithms that compare elements of the dataset to determine their order. These algorithms rely on comparing pairs of elements using relational operators <b>(e.g., <code>&lt;</code>, <code>&gt;</code>, <code>=</code>)</b>. Examples include Bubble Sort, Quick Sort, Merge Sort, and Heap Sort. Their time complexity is generally lower-bounded by <b><code>O(n log n)</code></b> for comparison-based sorting.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Non-Comparison Based Sorting Algorithms -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/non-comparison-based-sorting-algorithms.jpg" alt="Bubble Sort" class="card-img-top custom-img" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Non-Comparison Based Sorting</h3>
+                                    <p class="card-text text-muted">Sorting algorithms that do not compare elements directly but use other properties of the data (e.g., digits, counts) to sort. These algorithms are often faster than comparison-based sorts, with time complexities like <b><code>O(n)</code></b> or <b><code>O(n + k)</code></b>. Examples include Counting Sort, Radix Sort, and Bucket Sort. They are useful for specific types of data (e.g., integers within a known range).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Sorting Algorithm Categories -->
+                    <div class="row mt-5">
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/sorting-algorithms.jpg" alt="Bubble Sort" class="card-img-top custom-img" />
+
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Other Sorting Categories</h3>
+                                    <p class="card-text text-muted">Sorting techniques that do not strictly fall into comparison or non-comparison categories includes hybrid algorithms (e.g., Timsort, which combines Merge Sort and Insertion Sort) and specialized algorithms for specific data structures (e.g., sorting networks) or otherwise;</p>
+                                    <dl class="text-start row">
+                                        <dt class="col-12 fw-bold text-primary">In-Place/ Out-Place Technique</dt>
+                                        <dd class="col-12"><b>In-Place:</b> Sorting algorithms that use a constant amount of extra memory (<code>O(1)</code> space) to rearrange elements are called In-Place Sorting Techniques. Examples include Bubble Sort, Insertion Sort, and Quick Sort. They are memory-efficient but may have higher time complexity.</dd>
+                                        <dd class="col-12"><b>Out-Place:</b> While Out-Place Techniques includes Sorting algorithms that require additional memory proportional to the input size (<code>O(n)</code> space). Examples include Bubble Sort, Insertion Sort, and Quick Sort. They are memory-efficient but may have higher time complexity.</dd>
+                                        
+                                        <br>
+                                        
+                                        <dt class="col-12 fw-bold text-primary">Online/ Offline Technique</dt>
+                                        <dd class="col-12"><b>Online:</b> Sorting algorithms that can process input data as it is received, without needing the entire dataset upfront are called Online Sorting Techniques. Examples include Insertion Sort and Heap Sort. Useful for streaming data.</dd>
+                                        <dd class="col-12"><b>Offline:</b> Offline Techniques can be defined as Sorting algorithms that require the entire dataset to be available before sorting begins. Examples include Merge Sort and Quick Sort. Suitable for static datasets.</dd>
+                                        
+                                        <br>
+
+                                        <dt class="col-12 fw-bold text-primary">Stable/ Unstable Technique</dt>
+                                        <dd class="col-12"><b>Stable:</b> Stable Sorting algorithms are algorithms that maintain the relative order of equal elements. Examples include Merge Sort, Insertion Sort, and Bubble Sort. Useful when preserving the original order of equal elements is important.</dd>
+                                        <dd class="col-12"><b>Unstable:</b> While on the other hand, Unstable Sorting algorithms are the ones that do not guarantee the relative order of equal elements. Examples include Quick Sort and Heap Sort. Faster but may not preserve order.</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Separator --> 
+                <hr class="my-5 border-3 border-primary opacity-75" />
+
+                <!-- Algorithm Section -->
+                <div>
+                    <h2 class="text-center text-success fw-bold mb-4">Different Algorithms</h2>
+                    <div class="row row-cols-1 row-cols-md-2 justify-content-center g-5">
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/bubble-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Bubble Sort</h3>
+                                    <p class="card-text text-muted">A simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n²)</code></b> (worst and average case).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/counting-sort.jpg" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Counting Sort</h3>
+                                    <p class="card-text text-muted">A non-comparison-based sorting algorithm that counts the occurrences of each element and uses arithmetic to place elements in the correct position.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n + k)</code></b>, where k is the range of input.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/heap-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Heap Sort</h3>
+                                    <p class="card-text text-muted">A comparison-based sorting algorithm that uses a binary heap data structure to sort elements.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n log n)</code></b>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/insertion-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Insertion Sort</h3>
+                                    <p class="card-text text-muted">A simple comparison-based sorting algorithm that builds the final sorted array one element at a time by inserting each element into its correct position.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n²)</code></b> (worst and average case), <b><code>O(n)</code></b> (best case for nearly sorted data).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/merge-sort.png" class="card-img-top custom-img alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Merge Sort</h3>
+                                    <p class="card-text text-muted">A divide-and-conquer, comparison-based sorting algorithm that recursively divides the dataset into smaller subarrays, sorts them, and merges them back together.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n log n)</code>.</b></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/quick-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Quick Sort</h3>
+                                    <p class="card-text text-muted">A divide-and-conquer, comparison-based sorting algorithm that selects a pivot element and partitions the dataset into two subarrays (less than and greater than the pivot), then recursively sorts them.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n log n)</code></b> (average case), <b><code>O(n²)</code></b> (worst case for poorly chosen pivots).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/radix-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Radix Sort</h3>
+                                    <p class="card-text text-muted">A non-comparison-based sorting algorithm that sorts numbers by processing individual digits (from least significant to most significant).</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(nk)</code></b>, where <code>k</code> is the number of digits.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/selection-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Selection Sort</h3>
+                                    <p class="card-text text-muted">A simple comparison-based sorting algorithm that repeatedly selects the smallest (or largest) element from the unsorted portion and swaps it with the first unsorted element.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n²)</code></b>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/bucket-sort.jpg" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Bucket Sort</h3>
+                                    <p class="card-text text-muted">A non-comparison-based sorting algorithm that distributes elements into buckets and sorts each bucket individually.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n + k)</code></b>, where <code>k</code> is the number of buckets.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/shell-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Shell Sort</h3>
+                                    <p class="card-text text-muted">A generalization of Insertion Sort that allows exchanges of elements that are far apart.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n log n)</code></b> to <b><code>O(n²)</code></b> (depends on gap sequence).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm custom-card p-3">
+                                <img src="../images/timm-sort.png" class="card-img-top custom-img" alt="Merge Sort" />
+                                <div class="card-body text-center">
+                                    <h3 class="card-title text-dark">Tim Sort</h3>
+                                    <p class="card-text text-muted">A hybrid sorting algorithm derived from Merge Sort and Insertion Sort, used in Python and Java.</p>
+                                    <p class="card-text text-muted">Time Complexity: <b><code>O(n log n)</code></b>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Conatiner for footer -->
+    <footer id="footer"></footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>

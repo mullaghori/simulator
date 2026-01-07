@@ -1,0 +1,235 @@
+
+<!--------------------------------------
+
+DOCUMENTATION PAGE OF MY SIMULATOR - WEB-BASED SIMULATOR FOR SORTING ALGORITHMS
+BY
+JAVED ULLAH - BC210405541
+
+USER CAN...
+* Navigate to different algorithms pages
+* Can read some basic and general FAQs
+* Can know what this simulator do and how to use it
+
+THINGS TO DO...
+* Will try to improve the style of this page
+* Add and improve the descriptions and maybe include some style changes too
+
+---------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+
+        <!-- Different types of meta data about this Simulator -->
+        <meta charset="UTF-8" />  <!-- Encoding character set -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!-- By default Device width and initial zoom level -->
+        <meta name="author" content="Javed Ullah MGI" />  <!-- Author's Info - the coder of this website -->
+
+        <meta name="keywords" content="sorting simulator, algorithm visualization, sorting algorithms, animated sorting, array sorting, bubble sort, quick sort, sorting visualizer, counting sort, tim sort, shell sort, heap sort, insertion sort, merge sort, radix sort, selection sort, bucket sort" />  <!-- Helps in SEO, some related kewords and tags etc included -->
+        <meta name="description" content="A web-based animated simulator for sorting algorithms that provides a visualized experience of sorting processes using different algorithms." />  <!-- Helps in SEO, A short description included -->
+
+        <meta name="robots" content="index, follow" />  <!-- Helps with SEO -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- Ensures compatibility with older IE versions -->
+        
+        <!-- Favicons for different screens and different devices -->
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+        <link rel="icon" type="image/png" href="../images/android-chrome-512x512.png" sizes="512x512" />
+        <link rel="icon" type="image/png" href="../images/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+        <link rel="manifest" href="../images/site.webmanifest" />
+        
+        <!-- Website Title and Page title of my Web Based Simulator -->
+        <title>Web-Based Animated Simulator for Sorting Algorithms - Documentation</title>
+        
+        <!-- Linking Bootstrap CSS via CDN Link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        
+        <!-- Linking Bootstrap JavaScript (with Popper.js) via CDN Link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Linking Bootstrap Icons via CDN Link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+    </head>
+    <body>
+
+        <!-- Container for header -->
+        <header id="header"></header>
+
+        <main class="container my-4">
+            <h2 class="text-center text-primary mb-4 fw-bold">Documentation</h2>
+
+            <div class="row g-4">
+
+                <!-- General Use Secion -->
+                <section class="col-12 p-4 bg-danger bg-opacity-25 border rounded shadow-sm">
+                    <h2 class="text-center text-danger fw-bold">General Usage Instructions</h2>
+                    <p class="text-center text-muted">
+                        This interactive sorting algorithm simulator allows users to visualize different sorting algorithms step by step. 
+                        Follow the instructions below to explore how to use this sorting agorithm simulator, what services are available here on this website and what we will try to bring in future...!
+                    </p>
+
+                    <div class="mt-4">
+                        <!-- How to Use this sorting algorithm simulator -->
+                        <h4 class="text-danger">How to Use:</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item"><b>1.</b> Enter numbers separated by commas in the input field. <b>OR</b> Generate an array of random numbers.</li>
+                            <li class="list-group-item"><b>2.</b> Click the <b>'Select Algorithm'</b> button to move on to the algorithm selection page.</li>
+                            <li class="list-group-item"><b>3.</b> Select a sorting algorithm from the dropdown menu.</li>
+                            <li class="list-group-item"><b>4.</b> Click the <b>'Apply Algorithm'</b> button to move on to the simulation page.</li>
+                            <li class="list-group-item"><b>5.</b> You can start the simulation by clicking the <b>'Start'</b> button.</li>
+                            <li class="list-group-item"><b>6.</b> Adjust sorting speed using the speed slider.</li>
+                            <li class="list-group-item"><b>7.</b> Pause and resume sorting at any time using the <b>'Pause/Resume'</b> button.</li>
+                            <li class="list-group-item"><b>8.</b> Reset the simulation by clicking the <b>'Reset'</b> button to visualize the algorithm again with a different speed.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <!-- Key Features of this algorithm simulator -->
+                        <h4 class="text-danger">Key Features:</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">🔢 Generation of a random array.</li>
+                            <li class="list-group-item">📊 Supports multiple sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.</li>
+                            <li class="list-group-item">⏳ Adjustable sorting speed for a better learning experience.</li>
+                            <li class="list-group-item">🛑 Pause & Resume functionality for step-by-step analysis.</li>
+                            <li class="list-group-item">📱 Fully responsive design—works on desktop, tablet and mobile devices.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Possible Future Updates & Features -->
+                    <div class="mt-4">
+                        <h4 class="text-danger">Possible Upcoming Features & Future Updates:</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">📌 Backward sorting (in Ascending or Descending order)</li>
+                            <li class="list-group-item">📌 Algorithm Comparison Mode - Compare two sorting algorithms side by side.</li>
+                            <li class="list-group-item">📌 Dark Mode - A visually comfortable dark theme.</li>
+                            <li class="list-group-item">📌 Algorithm Usage - Check history of any algorithm's usage.</li>
+                            <li class="list-group-item">📌 Save & Share Results - Ability to download sorting animations as a GIF.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- FAQs Section -->
+                <section class="col-12 p-4 bg-info bg-opacity-25 border rounded shadow-sm">
+                    <h2 class="text-center text-primary fw-bold">Frequently Asked Questions (FAQs)</h2>
+                    <p class="text-center text-muted">Find answers to common questions about the sorting simulator.</p>
+                
+                    <div class="row g-3">
+                        <!-- FAQ 1 -->
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <p class="card-header fw-bold">Which sorting algorithms are available on this platform to check and play with?</p>
+                                <p class="card-body text-muted">
+                                    This simulator includes Bubble Sort, Quick Sort, Merge Sort, Selection Sort, Insertion Sort, Heap Sort, and more.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <p class="card-header fw-bold">What is maximum length of the array i can sort using this online simulator?</p>
+                                <p class="card-body text-muted">
+                                    User can sort an array of length of upto 1000 elements using this simulator.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <p class="card-header fw-bold">Can I generate a random array of variable length for sorting, coz entering array with it's elements separated by commas are kinda fatigue?</p>
+                                <p class="card-body text-muted">
+                                    Yes, for the ease of the customers, a randomly generated aaray can be created using this simulator and can then be sorted using different sorting algorithm. So, it's not a must requirement for the user to enter an array, user can also generate an array with just a click of a button.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <p class="card-header fw-bold">How can I input my own array?</p>
+                                <p class="card-body text-muted">
+                                    You can enter numbers separated by commas in the input field before selecting a sorting algorithm.
+                                </p>
+                            </div>
+                        </div>
+                
+                        <!-- FAQ 5 -->
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <p class="card-header fw-bold">Can I adjust the sorting speed?</p>
+                                <p class="card-body text-muted">
+                                    Yes, you can control the sorting speed using the speed slider in the simulator interface.
+                                </p>
+                            </div>
+                        </div>
+                
+                        <!-- FAQ 6 -->
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <p class="card-header fw-bold">Is this tool mobile-friendly?</p>
+                                <p class="card-body text-muted">
+                                    Yes, the simulator is fully responsive and works on all screen sizes, including mobile and tablets.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Algorithm Explanations -->
+                <section id="algorithm-explanations" class="col-12 p-4 bg-success bg-opacity-25 border rounded shadow-sm">
+                    <h2 class="text-center text-success fw-bold">Algorithm Explanations</h2>
+                    <p class="text-center text-muted">Click on an algorithm to learn more about its working and implementation:</p>
+                    
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                        <div class="col"><a href="bubble-sort.html" class="btn btn-outline-success w-100">Bubble Sort</a></div>
+                        <div class="col"><a href="counting-sort.html" class="btn btn-outline-success w-100">Counting Sort</a></div>
+                        <div class="col"><a href="heap-sort.html" class="btn btn-outline-success w-100">Heap Sort</a></div>
+                        <div class="col"><a href="insertion-sort.html" class="btn btn-outline-success w-100">Insertion Sort</a></div>
+                        <div class="col"><a href="merge-sort.html" class="btn btn-outline-success w-100">Merge Sort</a></div>
+                        <div class="col"><a href="quick-sort.html" class="btn btn-outline-success w-100">Quick Sort</a></div>
+                        <div class="col"><a href="radix-sort.html" class="btn btn-outline-success w-100">Radix Sort</a></div>
+                        <div class="col"><a href="selection-sort.html" class="btn btn-outline-success w-100">Selection Sort</a></div>
+                        <div class="col"><a href="bucket-sort.html" class="btn btn-outline-success w-100">Bucket Sort</a></div>
+                        <div class="col"><a href="shell-sort.html" class="btn btn-outline-success w-100">Shell Sort</a></div>
+                        <div class="col"><a href="tim-sort.html" class="btn btn-outline-success w-100">Tim Sort</a></div>
+                    </div>
+                </section>
+                
+                <!-- Help Section -->
+                <!-- The data of this fowm is not being saved so far, will work on it later on -->
+                <section class="col-12 p-4 bg-warning bg-opacity-25 border rounded shadow-sm">
+                    <h2 class="text-warning text-center fw-bold">Ask for Specific Help</h2>
+                    <p class="text-center text-muted">If you need help with a specific issue, describe your problem below:</p>
+                
+                    <form id="helpForm" action="#" method="post">
+                        <div class="mb-3">
+                            <label for="userName" class="form-label fw-bold text-dark">Name:</label>
+                            <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label fw-bold text-dark">Email:</label>
+                            <input type="email" name="userEmail" id="userEmail" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="userIssue" class="form-label fw-bold text-dark">Your Issue:</label>
+                            <textarea id="userIssue" class="form-control" rows="4" placeholder="Describe your issue..." required></textarea>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-warning w-100 fw-bold">Submit</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Conatiner for footer -->
+        <footer id="footer"></footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+</html>

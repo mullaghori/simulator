@@ -1,0 +1,22 @@
+{
+    "name": "Web-Based Animated Simulator for Sorting Algorithms",
+    "short_name": "Sorting Visualizer",
+    "description": "A Web-Based Animated Sorting Algorithm Simulator, which provide visual look to show the user, that how different sorting algorithm works.",
+    "icons":[
+        {
+            "src":"/android-chrome-192x192.png",
+            "sizes":"192x192",
+            "type":"image/png"
+        },
+        
+        {
+            "src":"/android-chrome-512x512.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        }
+    ],
+    "start_url": "../html/index.html",
+    "theme_color":"#007bff",
+    "background_color":"#ffffff",
+    "display":"standalone"
+}

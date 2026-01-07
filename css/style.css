@@ -1,0 +1,30 @@
+
+/******************************************
+
+STYLES for Index.html Page
+
+******************************************/
+.custom-card {
+    max-width: 800px;   /* Limit max width for large screens */
+    margin: auto;       /* Center cards */
+}
+
+.custom-img {
+    max-height: 150px;  /* Reduce image size */
+    width: auto;  /* Maintain aspect ratio */
+    object-fit: contain;  /* Prevent distortion */
+}
+
+
+
+/******************************************
+
+STYLES for Simulation.html Page
+
+******************************************/
+#array-container {
+    height: 50vh; /* Adjust as needed */
+    max-height: 500px; /* Ensures it doesn't get too big */
+    overflow: hidden; /* Prevents extra scrolling */
+}
+
