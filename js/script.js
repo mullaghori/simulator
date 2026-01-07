@@ -12,7 +12,10 @@ async function loadHeader() {
     let res = await fetch('../html/header.html');
     let data = await res.text();
     document.getElementById('header').innerHTML = data;
+
+    setActiveNavLink(); // 👈 highlight current page
 }
+
 loadHeader();
 
 fetch('../html/footer.html')
@@ -56,3 +59,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 });
+
+
+/*************************************
+ * 
+ * Dynamically highlighting active page
+ * In Nav Bar in the header 
+ * 
+ ************************************/
+
+
+function setActiveNavLink() {
+    const links = document.querySelectorAll('.custom-nav a');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+}
